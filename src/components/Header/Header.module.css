@@ -3,13 +3,28 @@
     height: 100%;
     background: var(--bkg-color-l-4);
     border-radius: 10px;
-    display: flex;
+    display: grid;
+    grid-template: 100% / repeat(5, 1fr);
     align-items: center;
-    padding: 0 20px;
+    justify-items: center;
+    padding: 10px 10px 10px 20px;
     box-sizing: border-box;
 }
 
 .logo {
     color: var(--text-color);
     font-size: 1.5rem;
+}
+
+.logOutSection {
+    grid-column: 5;
+    height: 80%;
+    width: 80%;
+}
+
+.logOutSection p {
+    text-decoration: none !important;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    margin: 0;
 }

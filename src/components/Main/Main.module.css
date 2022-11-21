@@ -1,0 +1,24 @@
+.wrapper {
+    display: grid;
+    grid-template: auto / 65% 35%;
+    grid-gap: 10px;
+    width: calc(100% - 10px);
+}
+
+.section {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.filesSection {
+}
+
+.settingsSection {
+    background: var(--bkg-color-l-4);
+    border-radius: 10px;
+}
+

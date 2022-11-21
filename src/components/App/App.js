@@ -19,9 +19,13 @@ function App() {
     setLoggedIn(true);
   };
 
+  const handleLogOut = () => {
+    setLoggedIn(false);
+  };
+
   return (
     <div className={s.wrapper}>
-      <Header/>
+      <Header logOut={handleLogOut}/>
       <Routes>
         <Route index element={
           <ProtectedRoute isAllowed={isLoggedIn}
