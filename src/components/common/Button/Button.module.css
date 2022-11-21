@@ -1,0 +1,22 @@
+.btn {
+    width: 100%;
+    outline: none;
+    border: none;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    background: var(--main-theme-color);
+    color: #fff;
+    font-size: 1.5rem;
+    padding: .5rem 0;
+    cursor: pointer;
+    -webkit-transition: .2s;
+    -moz-transition: .2s;
+    -ms-transition: .2s;
+    -o-transition: .2s;
+    transition: .2s;
+}
+
+.btn:hover {
+    background: var(--main-theme-color-darken);
+}

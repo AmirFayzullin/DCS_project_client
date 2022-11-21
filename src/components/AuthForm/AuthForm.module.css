@@ -1,0 +1,20 @@
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    width: 50%;
+    display: grid;
+    grid-template: 100px auto / 100%;
+    justify-items: center;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
