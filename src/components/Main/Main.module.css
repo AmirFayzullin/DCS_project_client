@@ -10,15 +10,29 @@
     font-size: 1.5rem;
     width: 100%;
     text-align: center;
-    padding: 10px;
-    box-sizing: border-box;
 }
 
 .filesSection {
 }
 
-.settingsSection {
-    background: var(--bkg-color-l-4);
+.sendButton {
+    grid-column: 2 / 3;
+    background: var(--main-theme-color);
+    font-size: 1.5rem;
+    padding: 10px;
+    box-sizing: border-box;
     border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    color: var(--text-color);
+    margin-top: 10px;
+    transition: .2s;
 }
 
+.sendButton.inactive {
+    background: grey;
+}
+
+.sendButton:hover {
+    background-color: var(--main-theme-color-darken);
+}

@@ -1,0 +1,26 @@
+.dropZone {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border: dashed 5px transparent;
+    border-radius: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: border-color .3s, visibility .3s, opacity .3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    top: 0;
+}
+
+.dropZone.visible {
+    opacity: .9;
+    visibility: visible;
+    transition: border-color .3s, visibility .0s, opacity .3s;
+    background: var(--bkg-color-l-2);
+}
+
+.dropZone.active {
+    border-color: hsl(210, 50%, 50%);
+}

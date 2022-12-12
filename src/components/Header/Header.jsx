@@ -10,15 +10,15 @@ export const Header = ({logOut}) => {
                 Logo
             </div>
             <Routes>
-                <Route path="/"
-                       element={
-                           <div className={s.logOutSection}>
-                               <Button onClick={() => {logOut()}}>
-                                   Log out
-                               </Button>
-                           </div>
-                       }
-                />
+                {/*<Route path="/"*/}
+                {/*       element={*/}
+                {/*           <div className={s.logOutSection}>*/}
+                {/*               <Button onClick={() => {logOut()}}>*/}
+                {/*                   Log out*/}
+                {/*               </Button>*/}
+                {/*           </div>*/}
+                {/*       }*/}
+                {/*/>*/}
                 <Route path="/sign-up"
                        element={
                            <div className={s.logOutSection}>

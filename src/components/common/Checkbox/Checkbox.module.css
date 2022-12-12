@@ -1,0 +1,40 @@
+.wrapper {
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+}
+
+.nativeCheckbox {
+    display: none;
+}
+
+.customCheckbox {
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    border: solid 2px lightgrey;
+    box-sizing: border-box;
+    background: transparent;
+    transition: .3s;
+}
+
+.customCheckbox.checked {
+    background: #4063FF;
+    border-color: #4063FF;
+}
+
+.swoosh {
+    fill: none;
+    stroke-width: 3px;
+    stroke: white;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    transition: .3s;
+}
+
+.swoosh.checked {
+    stroke-dashoffset: 175;
+}
+

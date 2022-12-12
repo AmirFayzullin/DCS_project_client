@@ -22,6 +22,8 @@
     -o-transition: var(--transition-duration);
     transition: var(--transition-duration);
     user-select: text;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .placeholder {

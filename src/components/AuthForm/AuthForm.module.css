@@ -5,7 +5,7 @@
 }
 
 .content {
-    width: 50%;
+    width: 30%;
     display: grid;
     grid-template: 100px auto / 100%;
     justify-items: center;

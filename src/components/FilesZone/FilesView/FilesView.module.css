@@ -1,0 +1,13 @@
+.wrapper {
+    min-height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    grid-gap: 10px;
+    position: relative;
+    transition: .2s;
+}
+
+.wrapper.hidden {
+    opacity: .5;
+}

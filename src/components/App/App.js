@@ -9,7 +9,7 @@ import {Register} from "../Register/Register";
 import s from './App.module.css';
 
 function App() {
-  const [isLoggedIn, setLoggedIn] = useState(false);
+  const [isLoggedIn, setLoggedIn] = useState(true);
 
   const handleLogin = () => {
     setLoggedIn(true);

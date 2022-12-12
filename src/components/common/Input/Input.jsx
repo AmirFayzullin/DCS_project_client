@@ -13,6 +13,7 @@ const Input = (props) => {
                            ${props.value.length ? s.filled : ""} 
                            ${focused ? s.focused : ''}`}
                htmlFor={inputId}
+               style={props.style}
         >
             <input className={s.inputEl}
                    id={inputId}
@@ -24,7 +25,10 @@ const Input = (props) => {
                    }}
                    {...props}
             />
-            <p className={s.placeholder}>{props.name}</p>
+            {
+                props.name &&
+                <p className={s.placeholder}>{props.name}</p>
+            }
         </label>
     )
 };
