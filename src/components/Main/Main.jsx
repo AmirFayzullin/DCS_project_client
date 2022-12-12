@@ -7,6 +7,7 @@ import {ApiContext} from "../../contexts/ApiContext";
 import download from "downloadjs";
 import FilesZone from "../FilesZone/FilesZone";
 import AddButton from "../AddButton/AddButton";
+import {TooltipServiceContext} from "../../contexts/TooltipServiceContext";
 
 export const Main = () => {
     const [settings, setSettings] = useState({
@@ -19,6 +20,8 @@ export const Main = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [readyDownload, setReadyDownload] = useState(false);
     const {wsApi} = useContext(ApiContext);
+
+    const {open: openTooltip} = useContext(TooltipServiceContext);
 
     const removeFile = (filename) => {
         setFiles(fList => fList.filter(f => f.name !== filename));
@@ -45,6 +48,12 @@ export const Main = () => {
             .then(res => {
                 console.log(res);
             })
+            .catch(() => {
+                openTooltip({
+                    message: `Something went wrong during uploading your files :((`
+                });
+                setIsLoading(false);
+            })
     };
 
     useEffect(() => {
@@ -54,7 +63,11 @@ export const Main = () => {
 
                 if (event === "PROCESSING_FINISHED") {
                     if (payload.status === "OK") setReadyDownload(true);
+                    else openTooltip({
+                        message: `Something went wrong during processing your files :((`
+                    });
                     setIsLoading(false);
+                    console.log(payload.status);
                 }
             },
             close: () => {

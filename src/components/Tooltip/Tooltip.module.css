@@ -1,0 +1,10 @@
+.wrapper {
+    padding: 20px;
+    border-radius: 10px;
+    background: var(--bkg-color-l-2);
+}
+
+.message {
+    font-size: 1.2rem;
+    color: var(--text-color);
+}

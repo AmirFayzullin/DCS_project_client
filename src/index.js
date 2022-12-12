@@ -7,6 +7,7 @@ import {Api} from "./api/Api";
 import {apiConfig, wsApiConfig} from "./utils";
 import {WSApi} from "./api/WSApi";
 import {ApiContext} from "./contexts/ApiContext";
+import {WithTooltipService} from "./Wrappers/WithTooltipService";
 
 export const api = new Api(apiConfig);
 export const wsApi = new WSApi(wsApiConfig);
@@ -33,7 +34,9 @@ root.render(
   <React.StrictMode>
       <BrowserRouter>
           <ApiContext.Provider value={{api, wsApi}}>
-              <App/>
+              <WithTooltipService>
+                  <App/>
+              </WithTooltipService>
           </ApiContext.Provider>
       </BrowserRouter>
   </React.StrictMode>

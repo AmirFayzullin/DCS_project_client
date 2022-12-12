@@ -7,6 +7,7 @@ import {Main} from "../Main/Main";
 import {Login} from "../Login/Login";
 import {Register} from "../Register/Register";
 import s from './App.module.css';
+import {TooltipContainer} from "../Tooltip/TooltipContainer";
 
 function App() {
   const [isLoggedIn, setLoggedIn] = useState(true);
@@ -52,6 +53,8 @@ function App() {
                element={<Navigate to={isLoggedIn ? "/" : "/sign-in"}/>}
         />
       </Routes>
+
+      <TooltipContainer />
     </div>
   );
 }
