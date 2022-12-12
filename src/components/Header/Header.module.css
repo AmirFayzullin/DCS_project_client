@@ -3,10 +3,9 @@
     height: 100%;
     background: var(--bkg-color-l-4);
     border-radius: 10px;
-    display: grid;
-    grid-template: 100% / repeat(5, 1fr);
+    display: flex;
     align-items: center;
-    justify-items: center;
+    justify-content: space-between;
     padding: 10px 10px 10px 20px;
     box-sizing: border-box;
 }
@@ -16,15 +15,19 @@
     font-size: 1.5rem;
 }
 
-.logOutSection {
-    grid-column: 5;
+.contextSection {
     height: 80%;
-    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    align-content: center;
 }
 
-.logOutSection p {
+.contextSection p {
     text-decoration: none !important;
     color: var(--text-color);
     font-size: 1.2rem;
     margin: 0;
+    display: flex;
+    align-items: center;
 }

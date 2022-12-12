@@ -9,7 +9,7 @@ export const Login = ({handleLogin}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        handleLogin();
+        handleLogin({email, password});
     };
 
     return (

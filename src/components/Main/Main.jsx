@@ -48,7 +48,8 @@ export const Main = () => {
             .then(res => {
                 console.log(res);
             })
-            .catch(() => {
+            .catch((err) => {
+                console.log(err);
                 openTooltip({
                     message: `Something went wrong during uploading your files :((`
                 });
