@@ -1,6 +1,6 @@
 import '../../App.css';
 import {Header} from "../Header/Header";
-import React, {useContext, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import {Routes, Route, Navigate, useNavigate} from 'react-router-dom'
 import {ProtectedRoute} from "../ProtectedRoute/ProtectedRoute";
 import {Main} from "../Main/Main";
@@ -24,12 +24,14 @@ function App() {
     const handleLogin = (userData) => {
         api.login(userData)
             .then((data) => {
-                if (data.status !== 0) {     // when code !== 0 => deviation from expecting flow on server(e.g. user exists)
-                    openTooltip({
+                // when code !== 0 => deviation from expecting flow on server(e.g.  invalid data)
+                if (data.status !== 0) {
+                    return openTooltip({
                         message: "Login error: " + data.messages.join(", ")
                     });
-                    return data;
                 }
+
+                localStorage.setItem("token", data.token);
 
                 setUserData({email: userData.email});
                 setLoggedIn(true);
@@ -46,14 +48,15 @@ function App() {
     const handleRegister = (userData) => {
         api.register(userData)
             .then((data) => {
-                if (data.status !== 0) {     // when code !== 0 => deviation from expecting flow on server(e.g. user exists)
+                // when code !== 0 => deviation from expecting flow on server(e.g. user exists)
+                if (data.status !== 0) {
                     openTooltip({
                         message: "Error during registration: " + data.messages.join(", ")
                     });
                     return data;
                 }
 
-                navigate("/sign-in");
+                handleLogin(userData);
             })
             .catch(err => {
                 // server error: status NOT 2xx
@@ -66,7 +69,33 @@ function App() {
 
     const handleLogOut = () => {
         setLoggedIn(false);
+        localStorage.removeItem("token");
     };
+
+    const checkToken = () => {
+        const token = localStorage.getItem("token");
+
+        if (!token) return;
+
+        api.me(token)
+            .then(data => {
+                if (data.status !== 0) {
+                    return localStorage.removeItem("token");
+                }
+
+                setUserData({
+                    email: data.email
+                });
+                setLoggedIn(true);
+            })
+            .catch(err => {
+                console.log("Error token verifying: ", err);
+            })
+    };
+
+    useEffect(() => {
+        checkToken();
+    }, []);
 
     return (
         <UserContext.Provider value={userData}>

@@ -48,6 +48,17 @@ export class Api {
             .then(this.#checkResponse)
     };
 
+    me = (token) => {
+        return axios({
+            url: this._baseUrl + 'me',
+            method: 'get',
+            headers: {
+                "Authorization": `Bearer ${token}`
+            }
+        })
+            .then(this.#checkResponse)
+    };
+
     #getWsId = () => {
         return localStorage.getItem("WS-ID");
     }
