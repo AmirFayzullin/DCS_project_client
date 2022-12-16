@@ -7,10 +7,6 @@
     height: 50px;
     border-radius: 10px;
     background-color: var(--main-theme-color);
-    position: relative;
-    left: 50%;
-    bottom: 0;
-    transform: translate(-50%, 0);
     cursor: pointer;
     background-image: url(../../assets/plus.svg);
     background-position: center;

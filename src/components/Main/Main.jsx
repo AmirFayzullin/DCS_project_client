@@ -91,6 +91,15 @@ export const Main = () => {
             })
     };
 
+    const reset = () => {
+        if (files.length === 0 || isLoading) return;
+
+        setFiles([]);
+        setReadyDownload(false);
+        setIsLoading(false);
+
+    };
+
     let handleButtonClick = () => null;
 
     if (isLoading) handleButtonClick = () => null;
@@ -124,7 +133,13 @@ export const Main = () => {
                     }
                 </div>
             </div>
-            <AddButton addFiles={addFiles}/>
+            <div className={cn(s.section, s.controlButtons)}>
+                <div className={cn(s.resetButton, {[s.active]: files.length !== 0 && !isLoading})}
+                     onClick={() => reset()}
+                >
+                </div>
+                <AddButton addFiles={addFiles}/>
+            </div>
         </div>
     )
 };
