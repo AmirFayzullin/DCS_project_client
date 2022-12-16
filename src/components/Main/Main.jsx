@@ -83,8 +83,8 @@ export const Main = () => {
 
     const downloadFile = () => {
         api.download()
-            .then(res => {
-                download(new Blob([res.data]), 'output.pdf', 'application/pdf')
+            .then(blobData => {
+                download(blobData, 'output.pdf', blobData.type);
             })
             .catch(e => {
                 console.log(e);
