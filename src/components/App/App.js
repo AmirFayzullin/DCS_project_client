@@ -11,6 +11,7 @@ import {TooltipContainer} from "../Tooltip/TooltipContainer";
 import {ApiContext} from "../../contexts/ApiContext";
 import {TooltipServiceContext} from "../../contexts/TooltipServiceContext";
 import {UserContext} from "../../contexts/UserContext";
+import {BkgAnimationBox} from "../BkgAnimationBox/BkgAnimationBox";
 
 function App() {
     const [isLoggedIn, setLoggedIn] = useState(false);
@@ -130,8 +131,8 @@ function App() {
 
                 <TooltipContainer/>
             </div>
+            <BkgAnimationBox toShow={true}/>
         </UserContext.Provider>
-
     );
 }
 

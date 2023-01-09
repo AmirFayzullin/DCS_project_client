@@ -37,7 +37,7 @@ export const Settings = ({settings, setSettings, withSettings, setWithSettings, 
             <div className={cn(s.optionWrapper, {[s.inactive]: activeSetting !== "QUALITY" || !withSettings})}>
                 <p className={s.optionTitle}>Quality:</p>
                 <div className={s.optionPicker}>
-                    <SliderInput min={0} max={100} step={0.1} value={settings.quality || 0} onChange={handleCompressionChange}/>
+                    <SliderInput min={0} max={100} step={1} value={settings.quality || 0} onChange={handleCompressionChange}/>
                     <Input min={0} max={100} type="number" onChange={handleCompressionChange} value={settings.quality || 0} name={null}/>
                 </div>
             </div>

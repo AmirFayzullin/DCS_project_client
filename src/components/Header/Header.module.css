@@ -10,8 +10,16 @@
     box-sizing: border-box;
 }
 
-.logo {
-    color: var(--text-color);
+.logoImg {
+    height: 100%;
+    margin-right: 10px;
+}
+
+.logoContainer {
+    height: 100%;
+    color: rgb(64, 127, 191);
+    display: flex;
+    align-items: center;
     font-size: 1.5rem;
 }
 

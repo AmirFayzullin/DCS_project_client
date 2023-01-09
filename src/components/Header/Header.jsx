@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
 import s from './Header.module.css'
+import doughnut from '../../assets/doughnut.png';
 import {Route, Routes, Link} from 'react-router-dom'
 import Button from "../common/Button/Button";
 import {UserContext} from "../../contexts/UserContext";
@@ -9,8 +10,13 @@ export const Header = ({logOut}) => {
 
     return (
         <div className={s.wrapper}>
-            <div className={s.logo}>
-                Logo
+            <div className={s.logoContainer}>
+                <img
+                    className={s.logoImg}
+                    src={doughnut}
+                    alt=""
+                />
+                DOUGHNUT-PDF
             </div>
             <Routes>
                 <Route path="/"
